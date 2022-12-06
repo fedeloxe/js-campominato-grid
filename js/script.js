@@ -13,15 +13,21 @@ let grid = document.getElementById('grid')
 
 //aggiungo il bottone play
 
-//tramite un ciclo creo i quadrati e li inserisco allínterno della classe
-for(let i=1; i<= 100; i++){
-    const currentSquare = createSquare(i)
+let button = document.getElementById('play');
+button.addEventListener('click', function(){
+
+    //tramite un ciclo creo i quadrati e li inserisco allínterno della classe
+    for(let i=1; i<= 100; i++){
+        const currentSquare = createSquare(i)
 
 
-    currentSquare.addEventListener('click', function(){
-        this.classList.add('click');
-        console.log('hai cliccaro il numero '+ this.innerText)
-    });
+        currentSquare.addEventListener('click', function(){
+            this.classList.add('click');
+            console.log('hai cliccaro il numero '+ this.innerText)
+        });
 
-    grid.appendChild(currentSquare);
-}
+        grid.appendChild(currentSquare);
+    }
+
+})
+
