@@ -27,7 +27,6 @@ header{
     width: 720px;
     height: 720px;
     margin: 3rem auto;
-    background-color: brown;
 }
 
 .grid{
@@ -41,8 +40,15 @@ header{
     width: calc(100% / 10);
     height: calc(100% /10);
     cursor: pointer;
-    background-color: cornflowerblue;
+    background-color:brown;
     border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.click{
+    background-color: aqua;
 }
 
 
