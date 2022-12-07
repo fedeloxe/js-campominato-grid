@@ -16,13 +16,15 @@ let grid = document.getElementById('grid')
 let button = document.getElementById('play');
 button.addEventListener('click', function(){
 
+    document.getElementById('grid').innerHTML= '';
+    
     //tramite un ciclo creo i quadrati e li inserisco allínterno della classe
     for(let i=1; i<= 100; i++){
         const currentSquare = createSquare(i)
 
 
         currentSquare.addEventListener('click', function(){
-            this.classList.add('click');
+            this.classList.toggle('click');
             console.log('hai cliccaro il numero '+ this.innerText)
         });
 
