@@ -94,10 +94,11 @@ function generateGameGrid(cellsNumber, cells_per_row){
     const grid = document.createElement('div');
     grid.classList.add('grid');
 
-    for(let i=0; i<cellsNumber; i++){
+    for(let i=1; i<=cellsNumber; i++){
         const cell = createSingleCell(i, cells_per_row);
         cell.addEventListener('click', function(){
             this.classList.add('click');
+            console.log('hai cliccato il numero '+ this.innerText)
         })
         grid.appendChild(cell);
     }
