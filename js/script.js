@@ -1,35 +1,42 @@
 // Tramite una funzione creo la classe dei quadrati 
-function createSquare(i){
-    let currentElement= document.createElement('div')
+function createSquare(){
+  
+    //per fare in modo che non generi la griglia più volte do a grid una stringa vuota prima del ciclo che genera la griglia 
+    document.getElementById('grid').innerHTML="";
 
-    currentElement.classList.add('square')
-
-    currentElement.innerText= i;
-
-    return currentElement;
-}
-
-let grid = document.getElementById('grid')
-
-//aggiungo il bottone play
-
-let button = document.getElementById('play');
-button.addEventListener('click', function(){
-
-    document.getElementById('grid').innerHTML= '';
+    for(let i=0; i<100; i++){
+        let cell= document.createElement('div')
     
-    //tramite un ciclo creo i quadrati e li inserisco allínterno della classe
-    for(let i=1; i<= 100; i++){
-        const currentSquare = createSquare(i)
+        cell.classList.add('square')
 
 
-        currentSquare.addEventListener('click', function(){
-            this.classList.toggle('click');
-            console.log('hai cliccaro il numero '+ this.innerText)
-        });
+        //assegno alle celle il numero corrispondente
+        cell.innerText= i+1
 
-        grid.appendChild(currentSquare);
+        //aggingo il click alla singola cella
+        cell.addEventListener('click', function(){
+            this.classList.add('click')
+            console.log('hai cliccato il numero '+ this.innerText)
+        })
+         
+        //tramite appenchild assegno al figlio di grid la variabile cell che aggiunge la classe square a ogni singolo elemento 
+        document.getElementById('grid').appendChild(cell);
+
     }
 
+  
+}
+// richiamo la funzione nel bottone in modo tale da generare la griglia solo al click 
+let button = document.getElementById('play');
+button.addEventListener('click', function(){
+    createSquare()
+
+   
 })
+
+
+    
+
+
+
 
